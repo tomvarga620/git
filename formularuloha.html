@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      caption {
+        font-size: 25px;
+        background-color: lightgray;
+        color: dark;
+        font-family: Calibri;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+    <table border="0" width="400" align="center">
+      <thead>
+        <caption>Registration</caption>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="firstname" placeholder="Enter your name"></td>
+        </tr>
+        <tr>
+          <td>Password: </td>
+          <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>  <input type="email" name="email"></td>
+        </tr>
+        <tr>
+          <td>Date of birth:</td>
+          <td><input type="date" name="dateofbirth" min="2000-01-01" placeholder="YYYY-MM-DD"></td>
+        </tr>
+        <tr>
+          <td>Grade:</td>
+          <td><input type="text"> </td>
+        </tr>
+
+        <tr>
+          <td>Gender:</td>
+          <td><input type="radio" name="gender" value="1" checked>Male
+          <br><input type="radio" name="gender" value="2">Female</td>
+        </tr>
+        <tr>
+          <td>Marital status: </td>
+          <td>
+          <input type="radio" name="education" value="s" checked>Single
+          <br><input type="radio" name="education" value="m">Married
+          <br><input type="radio" name="education" value="d">Divorced
+          <br><input type="radio" name="education" value="w">Widower</td>
+        </tr>
+        <tr>
+          <td>Languages:</td>
+          <td><input type="checkbox" name="en">English <br>
+          <input type="checkbox" name="de">German <br>
+          <input type="checkbox" name="ru">Russian <br>
+          <input type="checkbox" name="ru" value="1">Other</td>
+        </tr>
+        <tr>
+          <td>Nationality:</td>
+          <td><select name="district">
+            <option value="Choose">Choose nationality</option>
+            <option value="SK">Slovak</option>
+            <option value="RU">Russian</option>
+            <option value="UKR">Ukranian</option>
+            <option value="OTR">Other</option>
+          </select> </td>
+        </tr>
+        <tr>
+          <td>About:</td>
+          <td><textarea name="aboutme" rows="5" placeholder="Text">Text</textarea></td>
+        </tr>
+        <tr>
+          <td>Your CV:</td>
+          <td><input type="file" name="myfile" value="Vyberte subor"> </td>
+        </tr>
+        <tr>
+          <td>Are you happy?</td>
+          <td>no<input type="range" name="" min="0" max="100">yes</td>
+        </tr>
+        <tr>
+          <td style="text-align:center"><input type="reset" name="reset" value="Reset"></td>
+          <td style="text-align:center"><input type="button" name="submiiit" value="Submit"> </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
+  </body>
+</html>
