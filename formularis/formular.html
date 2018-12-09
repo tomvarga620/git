@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+      body {
+        background-color: lightgray;
+      }
+      h1 {
+        text-align: center;
+        color: darkgray;
+      }
+      td {
+        padding: 5px;
+      }
+      #divForm {
+        width: 750px;
+        margin: auto;
+      }
+      #addButton {
+        width: 90px;
+      }
+      input[type='text'] {
+        width: 120px;
+      }
+      input[type='number'] {
+        width: 90px;
+      }
+      .tblResult {
+        border: 1px solid black;
+        width: 750px;
+        margin: auto;
+      }
+
+      #nonVisible {
+        color: red;
+        font-size: 11px;
+      }
+
+      .SaveLoad {
+        margin-top: 15px;
+        height:25px;
+        margin-left: 350px;
+        border-radius: 10%;
+      }
+      .deleteBtn:hover {
+        width: 50px;
+      }
+
+      .muz {
+        background-color: lightblue;
+      }
+
+      .zena {
+        background-color: lightpink;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1 align="center">Dynamicky renderovany obsah tabulky</h1>
+    <div id="divForm">
+
+    <table>
+      <tr>
+        <td>First name</td>
+        <td>Last name</td>
+        <td>Age</td>
+        <td>Gender</td>
+        <td rowspan="2"><button id="addButton" onclick="addButtonClick()">ADD</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="fname"> </td>
+        <td><input type="text" id="lname"> </td>
+        <td><input type="number" id="age"> </td>
+        <td><input type="radio" value="1" name="gender">Male
+        <input type="radio" value="2" name="gender">Female
+        </td>
+      </tr>
+      <div name="nonVisible">
+
+      <tr id="nonVisible">
+        <td><div id="checkName"></div></td>
+        <td><div id="checkLName"></div></td>
+        <td><div id="checkAge"></div></td>
+        <td><div id="checkGender"></div></td>
+      </tr>
+
+    </div>
+    </table>
+
+  </div>
+
+
+    <br>
+    <div id="result">
+      <table class="tblResult" id="tblResult">
+        <thead>
+        <tr>
+          <th>id</th>
+          <th>First name</th>
+          <th onclick="sortByName()">Last name</th>
+          <th onclick="sortByAge()">Age</th>
+          <th>Gender</th>
+          <th>Delete</th>
+        </tr>
+
+      </thead>
+      <tbody id="autoContent">
+      </tbody>
+      </table>
+
+      <button class="SaveLoad" id="saveBtn" onclick="savebtn()">Save inserted data</button>
+      <button class="SaveLoad" id="loadBtn" onclick="loadbtn()">Load saved data</button>
+
+    </div>
+
+
+  </body>
+</html>
