@@ -178,10 +178,10 @@ const repaintTable = (person) => {
     }
 
     function changeImg(){
-      // $( this ).attr('src', 'hdelete.png');
+      // $( this ).attr('src', 'differentx.png');
 
       $("img").hover(function() {
-        $(this).attr('src', 'hdelete.png');
+        $(this).attr('src', 'differentx.png');
       }, function() {
         $(this).attr('src', 'x.png');
       });
@@ -226,7 +226,7 @@ const repaintTable = (person) => {
         //
         //
         // $( "img" ).hover(function() {
-        //   // $( this ).attr('src', 'hdelete.png');
+        //   // $( this ).attr('src', 'differentx.png');
         //   console.log("huraa");
         // }, function() {
         //   // $( this ).attr('src', 'x.png');
