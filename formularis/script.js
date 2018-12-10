@@ -118,7 +118,7 @@ const repaintTable = (person) => {
 
     let column5=$('<td>');
     let text='deletePerson('+person.id+')';
-    let image=$('<img>').attr('src','x.png').attr('onclick', text).attr('onmouseover', 'changeImg()');
+    let image=$('<img>').attr('src','x.png').attr('onclick', text).attr('onmouseover', 'changeImg(this)');
 
 
 
@@ -179,7 +179,12 @@ const repaintTable = (person) => {
 
     function changeImg(){
       // $( this ).attr('src', 'hdelete.png');
-      $('img', this).attr('src', 'hdelete.png');
+
+      $("img").hover(function() {
+        $(this).attr('src', 'hdelete.png');
+      }, function() {
+        $(this).attr('src', 'x.png');
+      });
       console.log("huraa");
     }
 
@@ -218,14 +223,12 @@ const repaintTable = (person) => {
 
 
     }
-
-
-
-
-    // $( "img" ).hover(function() {
-    //   // $( this ).attr('src', 'hdelete.png');
-    //   console.log("huraa");
-    // }, function() {
-    //   // $( this ).attr('src', 'x.png');
-    //   console.log("huraaaaaaaa");
-    // });
+        //
+        //
+        // $( "img" ).hover(function() {
+        //   // $( this ).attr('src', 'hdelete.png');
+        //   console.log("huraa");
+        // }, function() {
+        //   // $( this ).attr('src', 'x.png');
+        //   console.log("huraaaaaaaa");
+        // });
