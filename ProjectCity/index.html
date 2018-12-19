@@ -4,20 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <script src="script.js"></script>
-    <style>
-      table{
-        background-color: gray;
-      }
-      tr {
-        align: center;
-      }
-      #mainContent {
-        background-color: lightgray;
-        width: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
     <div id="mainContent">
       <table align="center">
         <tr>
@@ -25,31 +15,47 @@
           <td>COUNTRY:</td>
         </tr>
         <tr>
-          <td><input type="text" id="city"></td>
-          <td><input type="text" id="country"></td>
-          <td><button name="Send">SEND</button></td>
+          <td><input type="text" id="city" placeholder="Name of city"></td>
+          <td><input type="text" id="country" placeholder="Name of country"></td>
+          <td><div id="wrong"></div> </td>
+          <td><button name="Send" onclick="getWeather()">SEND</button></td>
         </tr>
       </table>
     </div>
 
     <div id="resultTable">
-      <table align="center">
-        <tr>
-          <td>Temperature:</td>
-          <td id="temperature"></td>
-        </tr>
-        <tr>
-          <td>Humidity:</td>
-          <td id="humidity"></td>
-        </tr>
-        <tr>
-          <td>Pocet obyvatelov:</td>
-          <td id="pocetObyv"></td>
-        </tr>
-        <tr>
 
-        </tr>
-      </table>
+        <div id="sun">
+          <div id="resultsun">
+            Temperature:<div id="temperature"></div>
+          </div>
+        </div>
+
+        <div id="drops">
+          <div id="resultdrops">
+            Humidity: <div id="humidity"></div>
+          </div>
+        </div>
+
+        <div id="status">
+          <div id="resultstatus">
+            <div id="replaceDIV">The weather in the chosen city looks like: </div>
+            <div id="stav"></div>
+          </div>
+        </div>
+
+        <div id="mrak">
+          <div id="resultmrak">
+            Clouds:<div id="mraky"></div>
+          </div>
+        </div>
+
+        <div id="wind">
+          <div id="resultwind">
+            Wind:<div id="vietor"></div>
+          </div>
+        </div>
+
     </div>
   </body>
 </html>
