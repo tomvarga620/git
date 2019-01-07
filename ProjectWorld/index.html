@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div id="mainContent">
+      <table align="center">
+        <tr>
+          <td>continent:</td>
+          <td>country:</td>
+          <td>city:</td>
+        </tr>
+        <tr>
+          <td><select id="continents" onclick="getCountry()">
+            <option value="">Select continent</option>
+          </select> </td>
+          <td><select id="countries" onclick="getCity()">
+            <option value="">Select country</option>
+          </select> </td>
+          <td><select id="cities">
+            <option value="">Select city</option>
+          </select> </td>
+          <!-- <td><input type="text" id="city" placeholder="Name of city"></td>
+          <td><input type="text" id="country" placeholder="Name of country"></td> -->
+          <td><div id="wrong"></div> </td>
+          <td><button name="Send" onclick="getWeather()">SEND</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="resultTable">
+
+        <div id="sun">
+          <div id="resultsun">
+            Temperature:<div id="temperature"></div>
+          </div>
+        </div>
+
+        <div id="drops">
+          <div id="resultdrops">
+            Humidity: <div id="humidity"></div>
+          </div>
+        </div>
+
+        <div id="status">
+          <div id="resultstatus">
+            <div id="replaceDIV">The weather in the chosen city looks like: </div>
+            <div id="stav"></div>
+          </div>
+        </div>
+
+        <div id="mrak">
+          <div id="resultmrak">
+            Clouds:<div id="mraky"></div>
+          </div>
+        </div>
+
+        <div id="wind">
+          <div id="resultwind">
+            Wind:<div id="vietor"></div>
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>
