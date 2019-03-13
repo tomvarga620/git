@@ -1,7 +1,10 @@
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Database {
 
@@ -144,6 +147,60 @@ public class Database {
             e.printStackTrace();
         }
         return men;
+    }
+
+    public List<Person> getAdults(){
+        Connection conn = getConnection();
+
+        LocalDate localdate = LocalDate.now();
+
+        String daaaatum = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(localdate);
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        Calendar cal = Calendar.getInstance();
+
+        String query = "SELECT * from person where dob <= ? - interval 18 year";
+        List<Person> adults = new ArrayList<>();
+        ResultSet rs;
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            stmnt.setString(1, daaaatum);
+            System.out.println(daaaatum);
+            rs = stmnt.executeQuery();
+            while (rs.next()){
+                String fname = rs.getString("fname");
+                String lname = rs.getString("lname");
+                Date date = rs.getDate("dob");
+                String pin = rs.getString("pin");
+                Person p = new Person(fname,lname,date,pin);
+                adults.add(p);
+            }
+            closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return adults;
+    }
+
+    public Set<String> getFirstNames(){
+        Connection conn = getConnection();
+        String query = "select fname from person";
+        Set<String> firstnames =  new HashSet<String>();
+        ResultSet rs;
+
+        try {
+            PreparedStatement stmnt = conn.prepareStatement(query);
+            rs = stmnt.executeQuery();
+            while (rs.next()){
+                String fname = rs.getString("fname");
+                firstnames.add(fname);
+            }
+            closeConnection(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return firstnames;
+
     }
 
 

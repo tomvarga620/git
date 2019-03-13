@@ -1,11 +1,9 @@
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.sql.*;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException, SQLException {
@@ -87,6 +85,17 @@ public class Main {
         for(Person p : a){
             System.out.println(p.getFname() + p.getLname() + p.getDob() + p.getPin());
         }
+
+        List<Person> adults = database.getAdults();
+        for(Person pee : adults){
+            System.out.println(pee.getFname() + pee.getLname() + pee.getDob() + pee.getPin());
+        }
+
+        Set<String> firstnames = database.getFirstNames();
+        for (String ccc : firstnames){
+            System.out.println(ccc);
+        }
+        System.out.println(firstnames);
 
 
 
