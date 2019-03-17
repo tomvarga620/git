@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cars>
+	<car>
+		<brand>Skoda Octavia</brand>
+		<color>pink</color>
+		<fuel>P</fuel>
+		<spz>KK 123PO</spz>
+		<price>12355667</price>
+	</car>
+	<car>
+		<brand>Skoda Fabia</brand>
+		<color>blue</color>
+		<fuel>P</fuel>
+		<spz>KE 082PE</spz>
+		<price>10001234</price>
+	</car>
+	<car>
+		<brand>Citroen Jumper</brand>
+		<color>black</color>
+		<fuel>G</fuel>
+		<spz>BA 077OP</spz>
+		<price>10034</price>
+	</car>
+	<car>
+		<brand>Nissan nieco</brand>
+		<color>black</color>
+		<fuel>E</fuel>
+		<spz>KE 333ZP</spz>
+		<price>15000</price>
+	</car>
+	<car>
+		<brand>Volvo nejake</brand>
+		<color>silver</color>
+		<fuel>P</fuel>
+		<spz>PO 222ZE</spz>
+		<price>20000</price>
+	</car>
+</cars>
