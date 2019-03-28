@@ -1,4 +1,4 @@
-package sk.itsovy.items;
+package sk.itsovy.items.drink;
 
 public class Draft extends Drink implements DraftInterface {
     private double volume;

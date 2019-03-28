@@ -6,10 +6,10 @@ public class Goods extends Item implements Pcsinterface{
     private int amount;
     private Category type;
 
-    public Goods(String name, double price, int amount, Category type) {
+    public Goods(String name, double price, int amount, Category category) {
         super(name, price);
         this.amount=amount;
-        this.type=type;
+        this.type=category;
     }
 
     public Goods(String name, double price, Category type) {

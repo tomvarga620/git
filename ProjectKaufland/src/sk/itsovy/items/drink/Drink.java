@@ -1,6 +1,8 @@
-package sk.itsovy.items;
+package sk.itsovy.items.drink;
 
-public abstract class Drink extends Item{
+import sk.itsovy.items.Item;
+
+public abstract class Drink extends Item {
     private boolean sweet;
 
     public Drink(String name, double price, boolean sweet) {

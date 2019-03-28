@@ -1,4 +1,7 @@
-package sk.itsovy.items;
+package sk.itsovy.items.food;
+
+import sk.itsovy.items.Pcsinterface;
+import sk.itsovy.items.food.Food;
 
 public class Pastry extends Food implements Pcsinterface {
     private int amount;
@@ -8,14 +11,13 @@ public class Pastry extends Food implements Pcsinterface {
         this.amount=amount;
     }
 
-    @Override
-    public double getTotalPrice() {
-        return amount*getPrice();
+    public Pastry(String name, double price, int amount) {
+        this(name, price, -1, amount);
     }
 
     @Override
-    public String getName() {
-        return getName(); //alebo super.getname()
+    public double getTotalPrice() {
+        return amount*getPrice();
     }
 
     @Override

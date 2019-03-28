@@ -1,12 +1,18 @@
-package sk.itsovy.items;
+package sk.itsovy.items.food;
 
-public class Fruit extends Food{
+import sk.itsovy.items.food.Food;
+
+public class Fruit extends Food {
 
     private double weight;
 
     public Fruit(String name, double price, int callories, double weight) {
         super(name, price, callories);
         this.weight=weight;
+    }
+
+    public Fruit(String name, double price, double weight) {
+        this(name, price, -1, weight);
     }
 
     public double getWeight() {

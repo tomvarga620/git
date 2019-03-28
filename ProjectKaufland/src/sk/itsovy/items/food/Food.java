@@ -1,6 +1,8 @@
-package sk.itsovy.items;
+package sk.itsovy.items.food;
 
-public abstract class Food extends Item{
+import sk.itsovy.items.Item;
+
+public abstract class Food extends Item {
     private int callories;
 
 
