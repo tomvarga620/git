@@ -4,6 +4,7 @@ import sk.itsovy.database.Database;
 import sk.itsovy.exception.BillException;
 import sk.itsovy.items.Item;
 
+import java.io.IOException;
 import java.util.Date;
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ import sk.itsovy.items.Pcsinterface;
 import sk.itsovy.items.drink.DraftInterface;
 import sk.itsovy.items.food.Fruit;
 import sk.itsovy.main.Globals;
+import sk.itsovy.main.Internet;
 
 public class Bill {
     private int count;
@@ -36,7 +38,7 @@ public class Bill {
     public void end() throws ParseException {
         if (open){
             datetime = new Date();
-            System.out.println(datum + " " + time);
+//            System.out.println(datum + " " + time);
             System.out.println(datetime);
             Database dat = Database.getInstanceDatab();
             dat.insertData(this);
@@ -81,10 +83,9 @@ public class Bill {
         return finalPrice;
     }
 
-    public double getFinalPriceDollars(){
+    public double getFinalPriceDollars() throws IOException {
         double finalP = getFinalPrice();
-        return 0.0;
-
+        return finalP * Internet.getUSDrate();
     }
 
     public int getCount(){

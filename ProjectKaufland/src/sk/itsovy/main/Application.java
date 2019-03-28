@@ -43,13 +43,13 @@ public class Application {
         Bottle pivko = new Bottle("Pivo tmave", 0.99, false, 1);
         bill.addItem(pivko);
         bill.removeItem(pivko);
-        System.out.println(bill.getCount());
-
-        System.out.println(bill.getFinalPrice());
 
         bill.print();
+        System.out.println("Number of items: " + bill.getCount());
+        System.out.println("Total price in EUR: " + bill.getFinalPrice());
+        System.out.println("Total price in USD: " + bill.getFinalPriceDollars());
         bill.end();
-        Internet.getUSDrate();
+//        Internet.getUSDrate();
     }
 
 }
