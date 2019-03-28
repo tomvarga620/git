@@ -2,6 +2,9 @@ package sk.itsovy.database;
 
 import sk.itsovy.bill.Bill;
 import sk.itsovy.items.Item;
+import sk.itsovy.items.Pcsinterface;
+import sk.itsovy.items.drink.DraftInterface;
+import sk.itsovy.items.food.Fruit;
 import sk.itsovy.main.Globals;
 
 import java.sql.*;
@@ -47,10 +50,32 @@ public class Database {
                 if (generatedKeys.next()) {
 //                    user.setId(generatedKeys.getLong(1));
                     System.out.println(generatedKeys.getLong(1));
+                    for(Item item : bill.getList()){
+                        PreparedStatement stmt1 = conn.prepareStatement("INSERT INTO items (orderID, name, price, count, unit) values(?,?,?,?,?)");
+                        stmt1.setString(1, String.valueOf(generatedKeys.getLong(1)));
+                        stmt1.setString(2, item.getName());
+                        stmt1.setDouble(3, item.getPrice());
+                        if (item instanceof DraftInterface){
+                            stmt1.setDouble(4, ((DraftInterface) item).getVolume());
+                            stmt1.setString(5, "l");
+
+                        }
+                        else if (item instanceof Fruit){
+                            stmt1.setDouble(4, ((Fruit) item).getWeight());
+                            stmt1.setString(5, "kg");
+                        }
+                        else if (item instanceof Pcsinterface){
+                            stmt1.setDouble(4, ((Pcsinterface) item).getAmount());
+                            stmt1.setString(5, "pcs");
+                        }
+
+
+                        int ex = stmt1.executeUpdate();
+                    }
 
                 }
                 else {
-                    throw new SQLException("Creating user failed, no ID obtained.");
+                    throw new SQLException("Creating bill failed, no ID obtained.");
                 }
             }
 

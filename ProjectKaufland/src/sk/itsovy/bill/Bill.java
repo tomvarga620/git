@@ -45,6 +45,10 @@ public class Bill {
         open = false;
     }
 
+    public List<Item> getList() {
+        return list;
+    }
+
     public void addItem(Item item) throws BillException {
         if (count < Globals.MAXITEMS) {
             if (item != null) {
