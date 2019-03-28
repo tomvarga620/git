@@ -1,14 +1,14 @@
 package sk.itsovy.bill;
 
+import sk.itsovy.database.Database;
 import sk.itsovy.exception.BillException;
 import sk.itsovy.items.Item;
 
+import java.util.Date;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import sk.itsovy.items.Pcsinterface;
@@ -19,6 +19,7 @@ import sk.itsovy.main.Globals;
 public class Bill {
     private int count;
     private boolean open;
+    private Date datetime;
     private LocalDate datum = LocalDate.now();
     private LocalTime time = LocalTime.now();
     private List<Item> list;
@@ -28,9 +29,17 @@ public class Bill {
         open = true;
     }
 
+    public Date getDatetime() {
+        return datetime;
+    }
+
     public void end() throws ParseException {
         if (open){
+            datetime = new Date();
             System.out.println(datum + " " + time);
+            System.out.println(datetime);
+            Database dat = Database.getInstanceDatab();
+            dat.insertData(this);
         }
 
         open = false;

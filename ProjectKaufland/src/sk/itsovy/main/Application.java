@@ -28,7 +28,7 @@ public class Application {
 
     public void example() throws BillException, ParseException, IOException {
         Bill bill = new Bill();
-        bill.print();
+//        bill.print();
         System.out.println("Name Price Callories Amount");
         Bottle milk = new Bottle("milk 1,5%", 0.59, 2);
         bill.addItem(milk);
@@ -46,8 +46,9 @@ public class Application {
         System.out.println(bill.getCount());
 
         System.out.println(bill.getFinalPrice());
-        bill.end();
+
         bill.print();
+        bill.end();
         Internet.getUSDrate();
     }
 
