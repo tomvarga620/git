@@ -11,6 +11,8 @@ import sk.itsovy.items.drink.Drink;
 import sk.itsovy.items.food.Fruit;
 import sk.itsovy.items.food.Pastry;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.text.ParseException;
 
@@ -26,7 +28,7 @@ public class Application {
         return app;
     }
 
-    public void example() throws BillException, ParseException, IOException {
+    public void example() throws BillException, ParseException, IOException, TransformerException, ParserConfigurationException {
         Bill bill = new Bill();
 //        bill.print();
         System.out.println("Name Price Callories Amount");
@@ -48,7 +50,10 @@ public class Application {
         System.out.println("Number of items: " + bill.getCount());
         System.out.println("Total price in EUR: " + bill.getFinalPrice());
         System.out.println("Total price in USD: " + bill.getFinalPriceDollars());
+        XML blocek = new XML();
+        blocek.createXML(bill);
         bill.end();
+
 //        Internet.getUSDrate();
     }
 

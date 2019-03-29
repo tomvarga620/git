@@ -21,7 +21,7 @@ import sk.itsovy.main.Internet;
 public class Bill {
     private int count;
     private boolean open;
-    private Date datetime;
+    private Date datetime = new Date();
     private LocalDate datum = LocalDate.now();
     private LocalTime time = LocalTime.now();
     private List<Item> list;
@@ -37,7 +37,6 @@ public class Bill {
 
     public void end() throws ParseException {
         if (open){
-            datetime = new Date();
 //            System.out.println(datum + " " + time);
             System.out.println(datetime);
             Database dat = Database.getInstanceDatab();
