@@ -28,4 +28,8 @@ public class Fruit extends Food {
     public String getName() {
         return super.getName();
     }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 }

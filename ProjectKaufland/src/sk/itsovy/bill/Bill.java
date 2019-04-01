@@ -2,6 +2,7 @@ package sk.itsovy.bill;
 
 import sk.itsovy.database.Database;
 import sk.itsovy.exception.BillException;
+import sk.itsovy.items.Goods;
 import sk.itsovy.items.Item;
 
 import java.io.IOException;
@@ -57,13 +58,41 @@ public class Bill {
                     String message = "Bill is closed. It is not allowed to add new item.";
                     throw new BillException(message);
                 }
-                list.add(item);
+                Item uzPridany = checkItem(item);
+                if(uzPridany == null)
+                    list.add(item);
+                else
+                    updateItem(uzPridany, item);
                 count++;
             }
         }
         else {
             String message = "Bill is full, max is 7 items";
             throw new BillException(message);
+        }
+    }
+
+    public Item checkItem(Item item){
+        for (Item item1: list) {
+            if(item.getName().toLowerCase().equals(item1.getName().toLowerCase()) && item.getClass().getName().equals(item1.getClass().getName()))
+                return item1;
+        }
+
+        return null;
+    }
+
+    public void updateItem(Item newItem, Item oldItem){
+        if (newItem instanceof DraftInterface){
+            double newVolume = ((DraftInterface) newItem).getVolume() + ((DraftInterface) oldItem).getVolume();
+            ((DraftInterface) newItem).setVolume(newVolume);
+        }
+        else if (newItem instanceof Fruit){
+            double newWeight = ((Fruit) newItem).getWeight() + ((Fruit) oldItem).getWeight();
+            ((Fruit) newItem).setWeight(newWeight);
+        }
+        else if(newItem instanceof Pcsinterface){
+            int newAmount = ((Pcsinterface) newItem).getAmount() + ((Pcsinterface) oldItem).getAmount();
+            ((Pcsinterface) newItem).setAmount(newAmount);
         }
     }
 

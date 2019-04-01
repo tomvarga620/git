@@ -40,6 +40,8 @@ public class Application {
         bill.addItem(apple);
         Goods pencil = new Goods("Pencil 0.5", 0.60, 1, Category.SCHOOL);
         bill.addItem(pencil);
+        Item jablcko = new Fruit("red apple", 0.59, 0.240);
+        bill.addItem(jablcko);
         Draft vinea = new Draft("White vinea", 1.20, true, 0.3);
         bill.addItem(vinea);
         Bottle pivko = new Bottle("Pivo tmave", 0.99, false, 1);

@@ -31,6 +31,12 @@ public class Bottle extends Drink implements Pcsinterface {
     }
 
     @Override
+    public void setAmount(int amount) {
+
+    }
+
+
+    @Override
     public String getName() {
         return super.getName();
     }

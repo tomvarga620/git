@@ -24,4 +24,9 @@ public class Pastry extends Food implements Pcsinterface {
     public int getAmount() {
         return amount;
     }
+
+    @Override
+    public void setAmount(int amount) {
+
+    }
 }

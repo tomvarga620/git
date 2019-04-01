@@ -30,4 +30,9 @@ public class Sweets extends Food implements Pcsinterface {
     public int getAmount() {
         return amount;
     }
+
+    @Override
+    public void setAmount(int amount) {
+
+    }
 }
