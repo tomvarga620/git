@@ -1,6 +1,7 @@
 package sk.itsovy.bill;
 
 import sk.itsovy.database.Database;
+import sk.itsovy.database.Mongo;
 import sk.itsovy.exception.BillException;
 import sk.itsovy.items.Goods;
 import sk.itsovy.items.Item;
@@ -26,10 +27,20 @@ public class Bill {
     private LocalDate datum = LocalDate.now();
     private LocalTime time = LocalTime.now();
     private List<Item> list;
+    private static int counter= 0;
+    private int id;
+
+
     public Bill(){
         this.list = new ArrayList<>();
         count = 0;
         open = true;
+        counter++;
+        id = counter;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Date getDatetime() {
@@ -42,6 +53,17 @@ public class Bill {
             System.out.println(datetime);
             Database dat = Database.getInstanceDatab();
             dat.insertData(this);
+
+
+
+            Mongo mongoDat = Mongo.getInstanceMongo();
+            try {
+                mongoDat.addBillToMongo(this);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+
+
         }
 
         open = false;

@@ -31,6 +31,11 @@ public class XML {
         Element rootElement = doc.createElement("bill");
         doc.appendChild(rootElement);
 
+        Element id = doc.createElement("id");
+        id.appendChild(doc.createTextNode(String.valueOf(bill.getId())));
+        rootElement.appendChild(id);
+
+
         Element datum = doc.createElement("date");
         rootElement.appendChild(datum);
 

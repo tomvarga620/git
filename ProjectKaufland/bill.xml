@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><bill><date><dateOfPurchase>Mon Apr 01 18:49:06 CEST 2019</dateOfPurchase></date><items><item><name>milk 1,5%</name><price>0.59</price><amount>2</amount></item><item><name>Gazdovska pizza</name><price>1.1</price><amount>2</amount></item><item><name>Red apple</name><price>0.59</price><amount>0.61</amount></item><item><name>Pencil 0.5</name><price>0.6</price><amount>1</amount></item><item><name>White vinea</name><price>1.2</price><amount>0.3</amount></item></items><price><EUR>4.6999</EUR><USD>5.267412925</USD></price></bill>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bill>
+    <id>1</id>
+    <date>
+        <dateOfPurchase>Fri Apr 05 14:41:20 CEST 2019</dateOfPurchase>
+    </date>
+    <items>
+        <item>
+            <name>milk 1,5%</name><price>0.59</price><amount>2</amount></item><item><name>Gazdovska pizza</name><price>1.1</price><amount>2</amount></item><item><name>Red apple</name><price>0.59</price><amount>0.61</amount></item><item><name>Pencil 0.5</name><price>0.6</price><amount>1</amount></item><item><name>White vinea</name><price>1.2</price><amount>0.3</amount></item></items><price><EUR>4.6999</EUR><USD>5.2776446073</USD></price></bill>
+
